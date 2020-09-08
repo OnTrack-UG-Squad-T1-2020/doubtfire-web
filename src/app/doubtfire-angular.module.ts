@@ -107,6 +107,7 @@ import { EmojiService } from './common/services/emoji.service';
 import { TaskListItemComponent } from './projects/states/dashboard/directives/student-task-list/task-list-item/task-list-item.component';
 import { StatusIconComponent } from './common/status-icon/status-icon.component';
 import { CreatePortfolioTaskListItemComponent } from './projects/states/dashboard/directives/student-task-list/create-portfolio-task-list-item/create-portfolio-task-list-item.component';
+import { PortfolioWelcomeStepComponent } from './projects/states/portfolio/directives/portfolio-welcome-step/portfolio-welcome-step.component';
 
 @NgModule({
   // Components we declare
@@ -133,6 +134,7 @@ import { CreatePortfolioTaskListItemComponent } from './projects/states/dashboar
     StudentCampusSelectComponent,
     TaskListItemComponent,
     CreatePortfolioTaskListItemComponent,
+    PortfolioWelcomeStepComponent,
     StatusIconComponent
   ],
   // Module Imports

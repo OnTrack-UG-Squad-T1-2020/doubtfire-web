@@ -103,7 +103,7 @@ import 'build/src/app/projects/states/portfolio/directives/portfolio-review-step
 import 'build/src/app/projects/states/portfolio/directives/portfolio-learning-summary-report-step/portfolio-learning-summary-report-step.js';
 import 'build/src/app/projects/states/portfolio/directives/portfolio-add-extra-files-step/portfolio-add-extra-files-step.js';
 import 'build/src/app/projects/states/portfolio/directives/portfolio-grade-select-step/portfolio-grade-select-step.js';
-import 'build/src/app/projects/states/portfolio/directives/portfolio-welcome-step/portfolio-welcome-step.js';
+import 'build/src/app/projects/states/portfolio/directives/portfolio-welcome-step-old/portfolio-welcome-step-old.js';
 import 'build/src/app/projects/states/portfolio/directives/portfolio-tasks-step/portfolio-tasks-step.js';
 import 'build/src/app/projects/states/portfolio/directives/directives.js';
 import 'build/src/app/projects/states/portfolio/portfolio.js';
@@ -287,6 +287,7 @@ import { EmojiService } from './common/services/emoji.service';
 import { TaskListItemComponent } from './projects/states/dashboard/directives/student-task-list/task-list-item/task-list-item.component';
 import { StatusIconComponent } from './common/status-icon/status-icon.component';
 import { CreatePortfolioTaskListItemComponent } from './projects/states/dashboard/directives/student-task-list/create-portfolio-task-list-item/create-portfolio-task-list-item.component';
+import { PortfolioWelcomeStepComponent } from './projects/states/portfolio/directives/portfolio-welcome-step/portfolio-welcome-step.component';
 
 export const DoubtfireAngularJSModule = angular.module('doubtfire', [
   'doubtfire.config',
@@ -350,6 +351,8 @@ DoubtfireAngularJSModule.directive('taskListItem',
   downgradeComponent({ component: TaskListItemComponent }));
 DoubtfireAngularJSModule.directive('createPortfolioTaskListItem',
   downgradeComponent({ component: CreatePortfolioTaskListItemComponent }));
+DoubtfireAngularJSModule.directive('portfolioWelcomeStep',
+  downgradeComponent({ component: PortfolioWelcomeStepComponent }));
 DoubtfireAngularJSModule.directive('statusIcon',
   downgradeComponent({ component: StatusIconComponent }));
 
