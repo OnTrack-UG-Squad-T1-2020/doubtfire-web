@@ -287,6 +287,7 @@ import { EmojiService } from './common/services/emoji.service';
 import { TaskListItemComponent } from './projects/states/dashboard/directives/student-task-list/task-list-item/task-list-item.component';
 import { StatusIconComponent } from './common/status-icon/status-icon.component';
 import { CreatePortfolioTaskListItemComponent } from './projects/states/dashboard/directives/student-task-list/create-portfolio-task-list-item/create-portfolio-task-list-item.component';
+import { PortfolioContainerComponent } from './projects/states/portfolio/directives/portfolio-container/portfolio-container.component';
 import { PortfolioWelcomeStepComponent } from './projects/states/portfolio/directives/portfolio-welcome-step/portfolio-welcome-step.component';
 
 export const DoubtfireAngularJSModule = angular.module('doubtfire', [
@@ -351,10 +352,12 @@ DoubtfireAngularJSModule.directive('taskListItem',
   downgradeComponent({ component: TaskListItemComponent }));
 DoubtfireAngularJSModule.directive('createPortfolioTaskListItem',
   downgradeComponent({ component: CreatePortfolioTaskListItemComponent }));
-DoubtfireAngularJSModule.directive('portfolioWelcomeStep',
-  downgradeComponent({ component: PortfolioWelcomeStepComponent }));
 DoubtfireAngularJSModule.directive('statusIcon',
   downgradeComponent({ component: StatusIconComponent }));
+DoubtfireAngularJSModule.directive('portfolioContainer',
+  downgradeComponent({ component: PortfolioContainerComponent }));
+DoubtfireAngularJSModule.directive('portfolioWelcomeStep',
+  downgradeComponent({ component: PortfolioWelcomeStepComponent }));
 
   // Global configuration
 

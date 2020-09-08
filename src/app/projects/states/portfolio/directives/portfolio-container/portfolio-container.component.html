@@ -1,0 +1,21 @@
+<mat-tab-group
+  #tabGroup
+  mat-stretch-tabs
+  mat-align-tabs="center">
+
+  <mat-tab
+    *ngFor="let t of tabs; let i = index"
+    [label]="t.title"
+    [disabled]="i > tabGroup.selectedIndex"
+    [ngSwitch]="t.name">
+
+    <portfolio-welcome-step *ngSwitchCase="'welcome'"></portfolio-welcome-step>
+    <!-- TODO: <portfolio-grade-select-step *ngSwitchCase="'grade'"></portfolio-grade-select-step> -->
+    <!-- TODO: <portfolio-learning-summary-report-step *ngSwitchCase="'learning-summary'"></portfolio-learning-summary-report-step> -->
+    <!-- TODO: <portfolio-tasks-step *ngSwitchCase="'tasks'"></portfolio-tasks-step> -->
+    <!-- TODO: <portfolio-add-extra-files-step *ngSwitchCase="'extra-files'"></portfolio-add-extra-files-step> -->
+    <!-- TODO: <portfolio-review-step *ngSwitchCase="'review'"></portfolio-review-step> -->
+
+  </mat-tab>
+
+</mat-tab-group>
