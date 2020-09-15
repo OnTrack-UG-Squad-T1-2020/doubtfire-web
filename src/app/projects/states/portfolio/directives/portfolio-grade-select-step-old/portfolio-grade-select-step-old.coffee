@@ -1,4 +1,4 @@
-angular.module('doubtfire.projects.states.portfolio.directives.portfolio-grade-select-step', [])
+angular.module('doubtfire.projects.states.portfolio.directives.portfolio-grade-select-step-old', [])
 
 #
 # Allows students to select the target grade they are hoping
@@ -7,7 +7,7 @@ angular.module('doubtfire.projects.states.portfolio.directives.portfolio-grade-s
 .directive('portfolioGradeSelectStep', ->
   restrict: 'E'
   replace: true
-  templateUrl: 'projects/states/portfolio/directives/portfolio-grade-select-step/portfolio-grade-select-step.tpl.html'
+  templateUrl: 'projects/states/portfolio/directives/portfolio-grade-select-step-old/portfolio-grade-select-step-old.tpl.html'
   controller: ($scope, Project, projectService, gradeService) ->
     $scope.grades = gradeService.grades
     $scope.agreedToAssessmentCriteria = $scope.projectHasLearningSummaryReport()

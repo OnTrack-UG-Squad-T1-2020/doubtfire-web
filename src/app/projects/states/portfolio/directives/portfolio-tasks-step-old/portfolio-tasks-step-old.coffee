@@ -1,4 +1,4 @@
-angular.module('doubtfire.projects.states.portfolio.directives.portfolio-tasks-step', [])
+angular.module('doubtfire.projects.states.portfolio.directives.portfolio-tasks-step-old', [])
 
 #
 # Allows students to select which tasks they have completed can
@@ -7,7 +7,7 @@ angular.module('doubtfire.projects.states.portfolio.directives.portfolio-tasks-s
 .directive('portfolioTasksStep', ->
   restrict: 'E'
   replace: true
-  templateUrl: 'projects/states/portfolio/directives/portfolio-tasks-step/portfolio-tasks-step.tpl.html'
+  templateUrl: 'projects/states/portfolio/directives/portfolio-tasks-step-old/portfolio-tasks-step-old.tpl.html'
   controller: ($scope) ->
     $scope.noTasksSelected = ->
       $scope.selectedTasks().length is 0

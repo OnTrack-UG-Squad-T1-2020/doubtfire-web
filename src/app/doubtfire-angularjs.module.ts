@@ -99,12 +99,12 @@ import 'build/src/app/projects/states/dashboard/directives/task-dashboard/direct
 import 'build/src/app/projects/states/dashboard/directives/task-dashboard/task-dashboard.js';
 import 'build/src/app/projects/states/dashboard/dashboard.js';
 import 'build/src/app/projects/states/outcomes/outcomes.js';
-import 'build/src/app/projects/states/portfolio/directives/portfolio-review-step/portfolio-review-step.js';
-import 'build/src/app/projects/states/portfolio/directives/portfolio-learning-summary-report-step/portfolio-learning-summary-report-step.js';
-import 'build/src/app/projects/states/portfolio/directives/portfolio-add-extra-files-step/portfolio-add-extra-files-step.js';
-import 'build/src/app/projects/states/portfolio/directives/portfolio-grade-select-step/portfolio-grade-select-step.js';
+import 'build/src/app/projects/states/portfolio/directives/portfolio-review-step-old/portfolio-review-step-old.js';
+import 'build/src/app/projects/states/portfolio/directives/portfolio-learning-summary-report-step-old/portfolio-learning-summary-report-step-old.js';
+import 'build/src/app/projects/states/portfolio/directives/portfolio-add-extra-files-step-old/portfolio-add-extra-files-step-old.js';
+import 'build/src/app/projects/states/portfolio/directives/portfolio-grade-select-step-old/portfolio-grade-select-step-old.js';
 import 'build/src/app/projects/states/portfolio/directives/portfolio-welcome-step-old/portfolio-welcome-step-old.js';
-import 'build/src/app/projects/states/portfolio/directives/portfolio-tasks-step/portfolio-tasks-step.js';
+import 'build/src/app/projects/states/portfolio/directives/portfolio-tasks-step-old/portfolio-tasks-step-old.js';
 import 'build/src/app/projects/states/portfolio/directives/directives.js';
 import 'build/src/app/projects/states/portfolio/portfolio.js';
 import 'build/src/app/projects/states/index/index.js';
@@ -289,6 +289,11 @@ import { StatusIconComponent } from './common/status-icon/status-icon.component'
 import { CreatePortfolioTaskListItemComponent } from './projects/states/dashboard/directives/student-task-list/create-portfolio-task-list-item/create-portfolio-task-list-item.component';
 import { PortfolioContainerComponent } from './projects/states/portfolio/directives/portfolio-container/portfolio-container.component';
 import { PortfolioWelcomeStepComponent } from './projects/states/portfolio/directives/portfolio-welcome-step/portfolio-welcome-step.component';
+import { PortfolioReviewStepComponent } from './projects/states/portfolio/directives/portfolio-review-step/portfolio-review-step.component';
+import { PortfolioAddExtraFilesStepComponent} from './projects/states/portfolio/directives/portfolio-add-extra-files-step/portfolio-add-extra-files-step.component';
+import { PortfolioTasksStepComponent } from './projects/states/portfolio/directives/portfolio-tasks-step/portfolio-tasks-step.component';
+import { PortfolioLearningSummaryReportStepComponent } from './projects/states/portfolio/directives/portfolio-learning-summary-report-step/portfolio-learning-summary-report-step.component';
+import { PortfolioGradeSelectStepComponent } from './projects/states/portfolio/directives/portfolio-grade-select-step/portfolio-grade-select-step.component';
 
 export const DoubtfireAngularJSModule = angular.module('doubtfire', [
   'doubtfire.config',
@@ -358,6 +363,16 @@ DoubtfireAngularJSModule.directive('portfolioContainer',
   downgradeComponent({ component: PortfolioContainerComponent }));
 DoubtfireAngularJSModule.directive('portfolioWelcomeStep',
   downgradeComponent({ component: PortfolioWelcomeStepComponent }));
+DoubtfireAngularJSModule.directive('portfolioReviewStepComponent',
+  downgradeComponent({ component: PortfolioReviewStepComponent }));
+DoubtfireAngularJSModule.directive('portfolioReviewStepComponent',
+  downgradeComponent({ component: PortfolioAddExtraFilesStepComponent }));
+DoubtfireAngularJSModule.directive('portfolioReviewStepComponent',
+  downgradeComponent({ component: PortfolioTasksStepComponent }));
+DoubtfireAngularJSModule.directive('portfolioReviewStepComponent',
+  downgradeComponent({ component: PortfolioLearningSummaryReportStepComponent }));
+  DoubtfireAngularJSModule.directive('portfolioReviewStepComponent',
+  downgradeComponent({ component: PortfolioGradeSelectStepComponent }));
 
   // Global configuration
 

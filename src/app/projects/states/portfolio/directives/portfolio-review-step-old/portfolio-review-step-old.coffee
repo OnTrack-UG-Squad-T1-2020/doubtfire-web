@@ -1,12 +1,12 @@
-angular.module('doubtfire.projects.states.portfolio.directives.portfolio-review-step', [])
+angular.module('doubtfire.projects.states.portfolio.directives.portfolio-review-step-old', [])
 
 #
 # Step for students to view their portfolio and optionally delete it
 #
-.directive('portfolioReviewStep', ->
+.directive('portfolioReviewStepOld', ->
   restrict: 'E'
   replace: true
-  templateUrl: 'projects/states/portfolio/directives/portfolio-review-step/portfolio-review-step.tpl.html'
+  templateUrl: 'projects/states/portfolio/directives/portfolio-review-step-old/portfolio-review-step-old.tpl.html'
   controller: ($scope, alertService, Project, DoubtfireConstants, ConfirmationModal) ->
 
     # Get the confugurable, external name of Doubtfire

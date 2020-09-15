@@ -109,6 +109,11 @@ import { StatusIconComponent } from './common/status-icon/status-icon.component'
 import { CreatePortfolioTaskListItemComponent } from './projects/states/dashboard/directives/student-task-list/create-portfolio-task-list-item/create-portfolio-task-list-item.component';
 import { PortfolioContainerComponent } from './projects/states/portfolio/directives/portfolio-container/portfolio-container.component';
 import { PortfolioWelcomeStepComponent } from './projects/states/portfolio/directives/portfolio-welcome-step/portfolio-welcome-step.component';
+import { PortfolioReviewStepComponent } from './projects/states/portfolio/directives/portfolio-review-step/portfolio-review-step.component';
+import { PortfolioAddExtraFilesStepComponent} from './projects/states/portfolio/directives/portfolio-add-extra-files-step/portfolio-add-extra-files-step.component';
+import { PortfolioTasksStepComponent } from './projects/states/portfolio/directives/portfolio-tasks-step/portfolio-tasks-step.component';
+import { PortfolioLearningSummaryReportStepComponent } from './projects/states/portfolio/directives/portfolio-learning-summary-report-step/portfolio-learning-summary-report-step.component';
+import { PortfolioGradeSelectStepComponent } from './projects/states/portfolio/directives/portfolio-grade-select-step/portfolio-grade-select-step.component';
 
 @NgModule({
   // Components we declare
@@ -138,6 +143,12 @@ import { PortfolioWelcomeStepComponent } from './projects/states/portfolio/direc
     StatusIconComponent,
     PortfolioContainerComponent,
     PortfolioWelcomeStepComponent,
+    PortfolioReviewStepComponent,
+    PortfolioAddExtraFilesStepComponent,
+    PortfolioTasksStepComponent,
+    PortfolioLearningSummaryReportStepComponent,
+    PortfolioGradeSelectStepComponent,
+
   ],
   // Module Imports
   imports: [

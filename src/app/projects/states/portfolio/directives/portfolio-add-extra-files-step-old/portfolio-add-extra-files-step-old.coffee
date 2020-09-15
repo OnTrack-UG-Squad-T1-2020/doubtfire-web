@@ -1,4 +1,4 @@
-angular.module('doubtfire.projects.states.portfolio.directives.portfolio-add-extra-files-step', [])
+angular.module('doubtfire.projects.states.portfolio.directives.portfolio-add-extra-files-step-old', [])
 
 #
 # Allow students to add additional files to the end of their portfolio
@@ -7,7 +7,7 @@ angular.module('doubtfire.projects.states.portfolio.directives.portfolio-add-ext
 .directive('portfolioAddExtraFilesStep', ->
   restrict: 'E'
   replace: true
-  templateUrl: 'projects/states/portfolio/directives/portfolio-add-extra-files-step/portfolio-add-extra-files-step.tpl.html'
+  templateUrl: 'projects/states/portfolio/directives/portfolio-add-extra-files-step-old/portfolio-add-extra-files-step-old.tpl.html'
   controller: ($scope, PortfolioSubmission) ->
     $scope.uploadType = 'document'
     $scope.$watch 'uploadType', (newType) ->
