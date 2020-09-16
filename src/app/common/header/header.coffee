@@ -4,22 +4,16 @@
 angular.module('doubtfire.common.header', [
   'doubtfire.common.header.unit-dropdown'
 ])
-.controller("BasicHeaderCtrl", ($scope, $state, $rootScope, UserNotificationSettingsModal, UserSettingsModal, currentUser, AboutDoubtfireModal, $transitions, $document, $filter) ->
+.controller("BasicHeaderCtrl", ($scope, $state, $rootScope, SettingsModal, currentUser, AboutDoubtfireModal, $transitions, $document, $filter) ->
   $scope.currentUser = currentUser.profile
 
   $scope.tutor = $state.params?.tutor?
 
   #
-  # Opens the user settings modal
+  # Opens the settings modal
   #
-  $scope.openUserSettings = ->
-    UserSettingsModal.show $scope.currentUser
-
-  #
-  # Opens the notification settings modal
-  #
-  $scope.openNotificationSettings = ->
-    UserNotificationSettingsModal.show $scope.currentUser
+  $scope.openSettings = ->
+    SettingsModal.show $scope.currentUser
 
   #
   # Opens the about DF modal
