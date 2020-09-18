@@ -4,7 +4,7 @@ angular.module('doubtfire.projects.states.portfolio.directives.portfolio-grade-s
 # Allows students to select the target grade they are hoping
 # to achieve with their portfolio
 #
-.directive('portfolioGradeSelectStep', ->
+.directive('portfolioGradeSelectStepOld', ->
   restrict: 'E'
   replace: true
   templateUrl: 'projects/states/portfolio/directives/portfolio-grade-select-step-old/portfolio-grade-select-step-old.tpl.html'
