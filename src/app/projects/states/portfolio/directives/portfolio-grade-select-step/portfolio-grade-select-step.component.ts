@@ -43,7 +43,7 @@ export class PortfolioGradeSelectStepComponent implements OnInit {
     this.working = true;
     this.Project.update(
       {
-        id: this.container.projectId,
+        id: this.container.project.project_id,
         submitted_grade: grade.index,
       },
       () => {

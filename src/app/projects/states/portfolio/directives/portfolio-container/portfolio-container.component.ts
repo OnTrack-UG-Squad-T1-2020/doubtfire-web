@@ -1,4 +1,4 @@
-import { Component, Inject, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Inject, Input, ViewChild } from '@angular/core';
 import { MatTabGroup } from '@angular/material/tabs';
 import { clamp } from 'lodash';
 import { projectService, unitService } from 'src/app/ajs-upgraded-providers';
@@ -13,7 +13,7 @@ interface PortfolioTab {
   templateUrl: './portfolio-container.component.html',
   styleUrls: ['./portfolio-container.component.scss']
 })
-export class PortfolioContainerComponent implements OnInit {
+export class PortfolioContainerComponent {
 
   constructor(
     @Inject(projectService) private projectService: any,
@@ -21,7 +21,8 @@ export class PortfolioContainerComponent implements OnInit {
   ) {
   }
 
-  @Input() projectId: string;
+  @Input() project: any;
+  @Input() unit: any;
 
   @ViewChild('tabGroup') tabGroup: MatTabGroup;
 
@@ -33,26 +34,6 @@ export class PortfolioContainerComponent implements OnInit {
     { name: 'extra-files', title: 'Upload Other Files' },
     { name: 'review', title: 'Review Portfolio' },
   ];
-
-  project: any = null;
-  unit: any = null;
-
-  /**
-   * Set to `true` after loading attributes that might be accessed by steps of the portfolio wizard.
-   */
-  ready: boolean = false;
-
-  ngOnInit() {
-    // Populate `project` and `unit`; indicate ready.
-    this.projectService.getProject(+this.projectId, null, (project) => {
-      this.project = project;
-
-      this.unit = this.unitService.getUnit(project.unit_id, (unit) => {
-        this.unit = unit;
-        this.ready = true;
-      });
-    });
-  }
 
   /**
    * Advances the portfolio tab control by the specified number of steps.
