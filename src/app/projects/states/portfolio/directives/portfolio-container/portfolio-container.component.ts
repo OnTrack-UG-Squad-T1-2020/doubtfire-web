@@ -1,5 +1,5 @@
 import { Component, Inject, Input, ViewChild } from '@angular/core';
-import { MatTabGroup } from '@angular/material/tabs';
+import { MatHorizontalStepper } from '@angular/material/stepper';
 import { clamp } from 'lodash';
 import { projectService, unitService } from 'src/app/ajs-upgraded-providers';
 
@@ -24,7 +24,7 @@ export class PortfolioContainerComponent {
   @Input() project: any;
   @Input() unit: any;
 
-  @ViewChild('tabGroup') tabGroup: MatTabGroup;
+  @ViewChild('tabStepper') tabStepper: MatHorizontalStepper;
 
   tabs: PortfolioTab[] = [
     { name: 'welcome', title: 'Portfolio Preparation' },
@@ -39,6 +39,6 @@ export class PortfolioContainerComponent {
    * Advances the portfolio tab control by the specified number of steps.
    */
   advance(by: number) {
-    this.tabGroup.selectedIndex = clamp(this.tabGroup.selectedIndex + by, 0, this.tabs.length - 1);
+    this.tabStepper.selectedIndex = clamp(this.tabStepper.selectedIndex + by, 0, this.tabs.length - 1);
   }
 }

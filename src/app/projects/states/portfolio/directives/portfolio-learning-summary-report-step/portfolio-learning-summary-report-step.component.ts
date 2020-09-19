@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatStep } from '@angular/material/stepper';
 import { PortfolioContainerComponent } from '../portfolio-container/portfolio-container.component';
 
 @Component({
@@ -10,6 +11,7 @@ export class PortfolioLearningSummaryReportStepComponent {
 
   constructor(
     public container: PortfolioContainerComponent,
+    public step: MatStep,
   ) { }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatStep } from '@angular/material/stepper';
 import { DoubtfireConstants } from 'src/app/config/constants/doubtfire-constants';
 import { PortfolioContainerComponent } from '../portfolio-container/portfolio-container.component';
 
@@ -13,12 +14,16 @@ export class PortfolioWelcomeStepComponent implements OnInit {
 
   constructor(
     public container: PortfolioContainerComponent,
-    private constants: DoubtfireConstants
+    public step: MatStep,
+    private constants: DoubtfireConstants,
   ) {
   }
 
   ngOnInit() {
     this.constants.ExternalName.subscribe((externalName) => this.externalName = externalName);
+
+    // Allow switching away from the welcome step, immediately.
+    this.step.completed = true;
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
+import { MatStep } from '@angular/material/stepper';
 import { gradeService, Project } from 'src/app/ajs-upgraded-providers';
 import { PortfolioContainerComponent } from '../portfolio-container/portfolio-container.component';
 
@@ -17,6 +18,7 @@ export class PortfolioGradeSelectStepComponent implements OnInit {
 
   constructor(
     public container: PortfolioContainerComponent,
+    public step: MatStep,
     @Inject(gradeService) public gradeService: any,
     @Inject(Project) private Project: any,
   ) { }
@@ -27,6 +29,7 @@ export class PortfolioGradeSelectStepComponent implements OnInit {
 
   ngOnInit() {
     this.currentGrade = this.container.project.submitted_grade;
+    this.step.completed = !!(this.currentGrade);
 
     // Populate grades.
     this.grades = this.gradeService.grades.map((grade, index) => ({
@@ -48,6 +51,7 @@ export class PortfolioGradeSelectStepComponent implements OnInit {
       },
       () => {
         this.currentGrade = grade.index;
+        this.step.completed = true;
         this.working = false;
       }
     );

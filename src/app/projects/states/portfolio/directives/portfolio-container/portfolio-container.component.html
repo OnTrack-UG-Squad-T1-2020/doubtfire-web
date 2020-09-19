@@ -1,14 +1,18 @@
-<mat-tab-group
-  #tabGroup
-  mat-stretch-tabs
-  mat-align-tabs="center">
+<mat-horizontal-stepper #tabStepper
+  labelPosition="bottom"
+  [linear]="true">
 
-  <mat-tab
-    *ngFor="let t of tabs; let i = index"
-    [label]="t.title"
-    [disabled]="i > tabGroup.selectedIndex"
+  <mat-step
+    *ngFor="let t of tabs"
+    [completed]="false"
     [ngSwitch]="t.name">
 
+    <ng-template matStepLabel>{{t.title}}</ng-template>
+    <ng-template matStepperIcon="edit">
+      <mat-icon>done</mat-icon>
+    </ng-template>
+
+    <!-- Steps -->
     <portfolio-welcome-step *ngSwitchCase="'welcome'"></portfolio-welcome-step>
     <portfolio-grade-select-step *ngSwitchCase="'grade'"></portfolio-grade-select-step>
     <portfolio-learning-summary-report-step *ngSwitchCase="'learning-summary'"></portfolio-learning-summary-report-step>
@@ -16,6 +20,6 @@
     <portfolio-add-extra-files-step *ngSwitchCase="'extra-files'"></portfolio-add-extra-files-step>
     <portfolio-review-step *ngSwitchCase="'review'"></portfolio-review-step>
 
-  </mat-tab>
+  </mat-step>
 
-</mat-tab-group>
+</mat-horizontal-stepper>
