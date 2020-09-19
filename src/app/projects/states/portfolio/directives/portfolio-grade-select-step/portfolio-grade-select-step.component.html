@@ -19,13 +19,13 @@
         have a list of criteria that you can use to determine if you meet the requirements to achieve that grade.
       </p>
       <p style="text-align: center;">
-        <mat-checkbox #agreeCheckbox>
+        <mat-checkbox [(ngModel)]="agreedToAssessmentCriteria">
           I have read the assessment criteria for this unit
         </mat-checkbox>
       </p>
     </mat-card><!--/confirm-read-assessment-criteria-->
 
-    <div *ngIf="agreeCheckbox.checked">
+    <div *ngIf="agreedToAssessmentCriteria">
       <br>
       <mat-card>
         <h4>Grade Application</h4>
@@ -49,7 +49,7 @@
       mat-raised-button
       color="primary"
       class="pull-right"
-      [disabled]="working"
+      [disabled]="working || !agreedToAssessmentCriteria || !step.completed"
       (click)="container.advance(1)">
       Next <mat-icon [inline]="true">arrow_forward</mat-icon>
     </button>

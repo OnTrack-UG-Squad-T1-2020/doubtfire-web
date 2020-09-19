@@ -26,10 +26,11 @@ export class PortfolioGradeSelectStepComponent implements OnInit {
   working: boolean = false;
   grades: DisplayedGrade[] = [];
   currentGrade: number | null = null;
+  agreedToAssessmentCriteria: boolean = false;
 
   ngOnInit() {
     this.currentGrade = this.container.project.submitted_grade;
-    this.step.completed = !!(this.currentGrade);
+    this.step.completed = this.agreedToAssessmentCriteria = (this.currentGrade !== null);
 
     // Populate grades.
     this.grades = this.gradeService.grades.map((grade, index) => ({
@@ -50,7 +51,7 @@ export class PortfolioGradeSelectStepComponent implements OnInit {
         submitted_grade: grade.index,
       },
       () => {
-        this.currentGrade = grade.index;
+        this.currentGrade = this.container.project.submitted_grade = grade.index;
         this.step.completed = true;
         this.working = false;
       }
