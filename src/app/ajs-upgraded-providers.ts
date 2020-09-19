@@ -4,10 +4,13 @@ import { InjectionToken } from '@angular/core';
 // Use the name of the angularjs service as the injection token string
 export const Unit = new InjectionToken('Unit');
 export const User = new InjectionToken('User');
+export const Project = new InjectionToken('Project');
 export const auth = new InjectionToken('auth');
 export const currentUser = new InjectionToken('currentUser');
 export const Task = new InjectionToken('Task');
 export const taskService = new InjectionToken('taskService');
+export const unitService = new InjectionToken('unitService');
+export const projectService = new InjectionToken('projectService');
 export const gradeService = new InjectionToken('gradeService');
 export const analyticsService = new InjectionToken('analyticsService');
 export const alertService = new InjectionToken('AlertService');
@@ -34,6 +37,12 @@ export const userProvider = {
   deps: ['$injector']
 };
 
+export const projectProvider = {
+  provide: Project,
+  useFactory: (i: any) => i.get('Project'),
+  deps: ['$injector']
+};
+
 export const authProvider = {
   provide: auth,
   useFactory: (i: any) => i.get('auth'),
@@ -49,6 +58,18 @@ export const currentUserProvider = {
 export const taskServiceProvider = {
   provide: taskService,
   useFactory: (i: any) => i.get('taskService'),
+  deps: ['$injector']
+};
+
+export const unitServiceProvider = {
+  provide: unitService,
+  useFactory: (i: any) => i.get('unitService'),
+  deps: ['$injector']
+};
+
+export const projectServiceProvider = {
+  provide: projectService,
+  useFactory: (i: any) => i.get('projectService'),
   deps: ['$injector']
 };
 

@@ -1,14 +1,55 @@
 <mat-card>
 
-  <h3 style="margin-bottom: 1em">Grade Select</h3>
+  <h3 style="margin-bottom: 1em">Select Grade</h3>
 
   <mat-card-content>
 
+    <p>
+      In preparing your portfolio, you need to undertake a self assessment. Use the unit's assessment criteria to
+      determine the grade your portfolio should be awarded.
+    </p>
+
+    <mat-card>
+      <h4>
+        <mat-icon [inline]="true">warning</mat-icon>
+        Read the assessment criteria
+      </h4>
+      <p>
+        Make sure that you have reviewed the assessment criteria for the grade you are applying for. Each grade will
+        have a list of criteria that you can use to determine if you meet the requirements to achieve that grade.
+      </p>
+      <p style="text-align: center;">
+        <mat-checkbox #agreeCheckbox>
+          I have read the assessment criteria for this unit
+        </mat-checkbox>
+      </p>
+    </mat-card><!--/confirm-read-assessment-criteria-->
+
+    <div *ngIf="agreeCheckbox.checked">
+      <br>
+      <mat-card>
+        <h4>Grade Application</h4>
+        <p>Select the <strong>grade</strong> you are applying for {{container.unit.name}} below.</p>
+        <p style="text-align: center;">
+          <mat-button-toggle-group [disabled]="working">
+            <mat-button-toggle
+              *ngFor="let grade of grades"
+              (click)="chooseGrade(grade)"
+              [checked]="currentGrade === grade.index">
+              {{ grade.acronym }}
+            </mat-button-toggle>
+          </mat-button-toggle-group>
+        </p>
+      </mat-card>
+    </div><!--/grade-selection-->
+
+    <br>
     <button
       mat-button
       mat-raised-button
       color="primary"
       class="pull-right"
+      [disabled]="working"
       (click)="container.advance(1)">
       Next <mat-icon [inline]="true">arrow_forward</mat-icon>
     </button>

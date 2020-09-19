@@ -1,7 +1,8 @@
 <mat-tab-group
   #tabGroup
   mat-stretch-tabs
-  mat-align-tabs="center">
+  mat-align-tabs="center"
+  *ngIf="ready">
 
   <mat-tab
     *ngFor="let t of tabs; let i = index"
