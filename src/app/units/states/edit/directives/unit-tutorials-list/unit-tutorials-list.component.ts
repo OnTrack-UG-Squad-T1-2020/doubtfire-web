@@ -25,7 +25,7 @@ export class UnitTutorialsListComponent extends EntityFormComponent<Tutorial> {
   days: string[] = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday', 'Asynchronous'];
 
   campuses: Campus[] = new Array<Campus>();
-  columns: string[] = ['abbreviation', 'campus', 'location', 'day', 'time', 'tutor', 'capacity', 'options'];
+  columns: string[] = ['abbreviation', 'campus', 'location', 'day', 'time', 'duration', 'tutor', 'capacity', 'options'];
   tutorials: Tutorial[];
 
   constructor(
@@ -51,6 +51,9 @@ export class UnitTutorialsListComponent extends EntityFormComponent<Tutorial> {
         Validators.required
       ]),
       tutor: new FormControl(null, [
+        Validators.required
+      ]),
+      meeting_duration: new FormControl(null, [
         Validators.required
       ]),
     });
@@ -140,6 +143,7 @@ export class UnitTutorialsListComponent extends EntityFormComponent<Tutorial> {
       case 'location':
       case 'day':
       case 'time':
+      case 'duration':
       case 'capacity': return super.sortTableData(sort);
     }
     this.dataSource.data = this.dataSource.data.sort((a, b) => {

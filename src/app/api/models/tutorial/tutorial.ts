@@ -12,6 +12,7 @@ const READ_KEYS =
     'meeting_day',
     'meeting_time',
     'meeting_location',
+    'meeting_duration',
     'abbreviation',
     'campus_id',
     'capacity',
@@ -28,6 +29,7 @@ const UPDATE_KEYS =
     'meeting_day',
     'meeting_time',
     'meeting_location',
+    'meeting_duration',
     'abbreviation',
     'campus_id',
     'capacity',
@@ -49,6 +51,7 @@ export class Tutorial extends Entity {
   meeting_day: string;
   meeting_time: string;
   meeting_location: string;
+  meeting_duration: number;
   abbreviation: string;
   campus: Campus;
   capacity: number;

@@ -27,6 +27,9 @@
           <th class="time">
             <a ng-click="sortOrder='meeting_time'; reverse=!reverse">Time</a>
           </th>
+          <th class="duration">
+            <a ng-click="sortOrder='meeting_duration'; reverse=!reverse">Duration (Minutes)</a>
+          </th>
           <th class="room">
             <a ng-click="sortOrder='meeting_location'; reverse=!reverse">Room</a>
           </th>
@@ -46,6 +49,7 @@
           <td>{{tutorial.abbreviation}}</td>
           <td>{{tutorial.meeting_day}}</td>
           <td>{{tutorial.meeting_time | date: 'shortTime'}}</td>
+          <td>{{tutorial.meeting_duration}}</td>
           <td>{{tutorial.meeting_location}}</td>
           <td>{{tutorial.tutor.name}}</td>
           <td>

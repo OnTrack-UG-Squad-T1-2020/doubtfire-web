@@ -136,6 +136,27 @@
       </td>
     </ng-container>
 
+    <!-- Duration Column -->
+    <ng-container [formGroup]="formData" matColumnDef="duration" sticky>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Duration </th>
+      <td mat-cell *matCellDef="let tutorial">
+        <div *ngIf="!editing(tutorial) else edit">
+          {{tutorial.meeting_duration}}
+        </div>
+        <ng-template #edit>
+          <mat-form-field class="data-entry">
+            <input matInput type="text" required formControlName="meeting_duration"
+              [value]="formData.get('meeting_duration').value" placeholder="Duration">
+          </mat-form-field>
+        </ng-template>
+      </td>
+      <td mat-footer-cell *matFooterCellDef>
+        <mat-form-field class="data-entry">
+          <input matInput type="text" required formControlName="meeting_duration" placeholder="Duration">
+        </mat-form-field>
+      </td>
+    </ng-container>
+  
     <!-- Tutor Column -->
     <ng-container [formGroup]="formData" matColumnDef="tutor">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Tutor </th>
