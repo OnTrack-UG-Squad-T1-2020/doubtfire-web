@@ -87,6 +87,7 @@ import { doubtfireStates } from './doubtfire.states';
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatSortModule } from '@angular/material/sort';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ActivityTypeListComponent } from './admin/states/activities/activity-type-list/activity-type-list.component';
 import { UnitStudentsEditorComponent } from './units/states/edit/directives/unit-students-editor/unit-students-editor.component';
 import { ActivityTypeService } from './api/models/activity-type/activity-type.service';
@@ -168,6 +169,7 @@ import { CreatePortfolioTaskListItemComponent } from './projects/states/dashboar
     MatIconModule,
     MatProgressSpinnerModule,
     MatSliderModule,
+    MatSlideToggleModule,
     UpgradeModule,
     MatTableModule,
     MatTabsModule,

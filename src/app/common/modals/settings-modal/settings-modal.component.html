@@ -2,22 +2,38 @@
     <h3 mat-dialog-title>Settings</h3>
     <div mat-dialog-content>
         <h4>Edit Profile Settings</h4>
-        <div class="col-sm-7">
+        <hr>
+        <div class="col-sm-12">
             <p>Profile settings here</p>
+            <hr>
+            <p>Student ID/Avatar here</p>
+            <hr>
+            <label>
+                Allow Analytics
+            </label>
+            <mat-slide-toggle class="aligned-toggle"></mat-slide-toggle>
+            <p>Allow us to anonymously gather your usage to improve Doubtfire.</p>
         </div>
     </div>
     <div mat-dialog-content>
-        <h4>Edit Notification Settings</h4> 
-        <div class="col-sm-7">
-            <mat-checkbox>
+        <h4>Edit Notification Settings</h4>
+        <hr>
+        <div class="col-sm-12">
+            <label>
                 Task Notifications
-            </mat-checkbox>
-            <mat-checkbox>
+            </label>
+            <mat-slide-toggle class="aligned-toggle"></mat-slide-toggle>
+            <br>
+            <label>
                 Feedback Notifications
-            </mat-checkbox>
-            <mat-checkbox>
+            </label>
+            <mat-slide-toggle class="aligned-toggle"></mat-slide-toggle>
+            <br>
+            <label>
                 Portfolio Notifications
-            </mat-checkbox>
+            </label>
+            <mat-slide-toggle class="aligned-toggle"></mat-slide-toggle>
+            <hr>
         </div>
     </div>
 </div>
