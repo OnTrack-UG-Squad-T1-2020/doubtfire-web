@@ -238,6 +238,41 @@ export class TaskCommentComposerComponent implements OnInit {
     );
   }
 }
+sendEmail(){
+/* SmtpJS.com - v3.0.0 */
+var Email = { send: function (a) 
+  { return new Promise(function (n, e) 
+    { a.nocache = Math.floor(1e6 * Math.random() + 1), a.Action = "Send";
+     var t = JSON.stringify(a); 
+     Email.ajaxPost("https://smtpjs.com/v3/smtpjs.aspx?", t, function (e) { n(e) }) }) }, ajaxPost: function (e, n, t) { var a = Email.createCORSRequest("POST", e);
+      a.setRequestHeader("Content-type", "application/x-www-form-urlencoded"), a.onload = function () { var e = a.responseText; null != t && t(e) }, a.send(n) }, ajax: function (e, n) { var t = Email.createCORSRequest("GET", e); 
+      t.onload = function () { var e = t.responseText; null != n && n(e) }, t.send() }, createCORSRequest: function (e, n) { var t = new XMLHttpRequest; 
+        return "withCredentials" in t ? t.open(e, n, !0) : "undefined" != typeof XMLHttpRequest ? (t = new XMLHttpRequest).open(e, n) : t = null, t } };
+
+    Email.send({
+      Host : "smtp.qq.com",
+      Username : "1085642156@qq.com",
+      Password : "gdskdjcksjllhfbe",
+      To : 'taojia@deakin.edu.au',
+      From : "1085642156@qq.com",
+      Subject : "Ontrack Notification",
+      Body : this.input.first.nativeElement.innerText
+  }).then(
+    message => alert(message)
+  );
+
+  }
+
+  buttonConfirm(){
+    var r=confirm("Are you sure to send your message through email?");
+    if(r==true){
+      this.sendEmail();
+    }
+    else{
+      alert("Your operation cancled!");
+    }
+  }
+}
 
 // The discussion prompt composer fialog Component
 // tslint:disable-next-line: max-classes-per-file
